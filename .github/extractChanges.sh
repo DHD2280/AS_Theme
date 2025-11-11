@@ -73,6 +73,10 @@ if [ $NUMREMOVED -gt 0 ]; then
 fi
 awk '!seen[$0]++' "$TMP_CHANGELOG" >> changeLog.md
 
+echo "*Dark Shadow Theme v$NEWVERNAME released!*" > telegram.msg
+echo "  " >> telegram.msg
+echo "*Changelog:*  " >> telegram.msg
+cat changeLog.md >> telegram.msg
 echo 'TMessage<<EOF' >> $GITHUB_ENV
-cat changeLog.msg >> $GITHUB_ENV
+cat telegram.msg >> $GITHUB_ENV
 echo 'EOF' >> $GITHUB_ENV
