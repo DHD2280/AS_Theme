@@ -20,7 +20,7 @@
     <string name="ThemeHeroOverride">auto</string>
     <!-- Put your theme changelog here, each item will be a new bullet point in the sheet -->
     <string-array name="ThemeChangelog">
-        <item>Versione 6.0.10</item>
+        <item>Versione 6.0.11</item>
         <item>AGGIUNTO:</item>
         <item>- - -</item>
         <item>AGGIORNATO:</item>
