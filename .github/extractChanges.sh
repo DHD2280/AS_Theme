@@ -32,7 +32,7 @@ do
     do
       #save in the temp file to be used by next script
       echo "- "${LINE##*ADDED: }"  " >> $TMP_ADDED
-	  NUMADDED++
+	    NUMADDED=${NUMADDED}+1
     done
 done
 for COMMIT in $UPDATED
@@ -42,7 +42,7 @@ do
     do
       #save in the temp file to be used by next script
       echo "- "${LINE##*UPDATED: }"  " >> $TMP_UPDATED
-	  NUMUPDATED++
+      NUMUPDATED=${NUMUPDATED}+1
     done
 done
 for COMMIT in $REMOVED
@@ -52,7 +52,7 @@ do
     do
       #save in the temp file to be used by next script
       echo "- "${LINE##*REMOVED: }"  " >> $TMP_REMOVED
-	  NUMREMOVED++
+      NUMREMOVED=${NUMREMOVED}+1
     done
 done
 
