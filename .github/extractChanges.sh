@@ -20,9 +20,9 @@ ADDED=$(git rev-list $LASTUPDATE..HEAD --grep "^ADDED: ")
 UPDATED=$(git rev-list $LASTUPDATE..HEAD --grep "^UPDATED: ")
 REMOVED=$(git rev-list $LASTUPDATE..HEAD --grep "^REMOVED: ")
 #vars
-NUMADDED=0
-NUMUPDATED=0
-NUMREMOVED=0
+declare -i NUMADDED=0
+declare -i NUMUPDATED=0
+declare -i NUMREMOVED=0
 #separator is newline
 IFS=$'\n'
 for COMMIT in $ADDED
@@ -32,7 +32,7 @@ do
     do
       #save in the temp file to be used by next script
       echo "- "${LINE##*ADDED: }"  " >> $TMP_ADDED
-	    NUMADDED=${NUMADDED}+1
+	    ((NUMADDED++))
     done
 done
 for COMMIT in $UPDATED
@@ -42,7 +42,7 @@ do
     do
       #save in the temp file to be used by next script
       echo "- "${LINE##*UPDATED: }"  " >> $TMP_UPDATED
-      NUMUPDATED=${NUMUPDATED}+1
+      ((NUMUPDATED++))
     done
 done
 for COMMIT in $REMOVED
@@ -52,7 +52,7 @@ do
     do
       #save in the temp file to be used by next script
       echo "- "${LINE##*REMOVED: }"  " >> $TMP_REMOVED
-      NUMREMOVED=${NUMREMOVED}+1
+      ((NUMREMOVED++))
     done
 done
 
