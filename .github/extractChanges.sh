@@ -14,7 +14,7 @@ touch $TMP_CHANGELOG
 touch Tchangelog.htm
 
 #find the last time we made a changelog
-LASTUPDATE=$(git log -1000 | grep -B 4 "Version update: Beta Release" | grep "commit" -m 1 | cut -d " " -f 2)
+LASTUPDATE=$(git log -1000 | grep -B 4 "Version update: Release" | grep "commit" -m 1 | cut -d " " -f 2)
 #find commits since - starting with the magic phrase
 ADDED=$(git rev-list $LASTUPDATE..HEAD --grep "^ADDED: ")
 UPDATED=$(git rev-list $LASTUPDATE..HEAD --grep "^UPDATED: ")
