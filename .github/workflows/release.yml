@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Source Code Download
-        run: git clone --branch master --single-branch --recurse-submodules https://github.com/tugaia56/AS_Theme.git .
+        run: git clone --branch master --single-branch --recurse-submodules https://github.com/DHD2280/AS_Theme.git .
 
       - name: Shell Scripts Permissions
         run: chmod +x .github/*.sh
