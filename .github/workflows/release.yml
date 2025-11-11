@@ -39,3 +39,13 @@ jobs:
           files: app/build.gradle.kts app/src/main/res/values/theme_configurations.xml app/src/main/res/values-it/theme_configurations.xml
           name: GitHub
           email: ASTheme@tugaia.it
+
+      - name: Theme Binary Release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          tag: ${{ env.VTag }}
+          name: ${{ env.VName }}
+          body: ${{ env.TMessage }}
+          prerelease: true
+          allowUpdates: false
+          draft: false
