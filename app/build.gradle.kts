@@ -49,9 +49,9 @@ android {
     defaultConfig {
         applicationId="tugaia56.dark.shadow.theme"
         minSdk=28
-        versionCode = 6011
-        versionName = "6.0.11"
-        setProperty("archivesBaseName", "Dark_Shadow_Theme_v6.0.11")
+        versionCode = 6012
+        versionName = "6.0.12"
+        setProperty("archivesBaseName", "Dark_Shadow_Theme_v6.0.12")
 
         // Themers: DO NOT MODIFY
         buildConfigField("boolean", "SUPPORTS_THIRD_PARTY_SYSTEMS", "$SUPPORTS_THIRD_PARTY_SYSTEMS")
